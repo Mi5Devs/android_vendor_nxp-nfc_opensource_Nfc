@@ -65,11 +65,13 @@ endif
 #### Select the CHIP ####
 ifeq ($(BOARD_NFC_CHIPSET),pn547)
 NXP_CHIP_TYPE := $(PN547C2)
+else ifeq ($(BOARD_NFC_CHIPSET),pn548)
+NXP_CHIP_TYPE := $(PN548C2)
 # Check NQ3XX_PRESENT flag to support NQ3XX chipsets
 else ifeq ($(strip $(NQ3XX_PRESENT)),true)
 NXP_CHIP_TYPE := $(PN553)
 else
-NXP_CHIP_TYPE := $(PN548C2)
+NXP_CHIP_TYPE := $(PN551)
 endif
 
 ifeq ($(NXP_CHIP_TYPE),$(PN547C2))
